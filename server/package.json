@@ -1,0 +1,13 @@
+{
+    "dependencies": {
+        "express": "4.16.3", //Framework used to handle HTTP requests and create routing paths.
+        "pg": "8.0.3", //Postgres library which connects and communicates with it
+        "redis": "2.8.0", //Connects with redis-server
+        "cors": "2.8.4", //Permits the communication between React User and API Express
+        "nodemon": "1.18.3" //Monitors code and restart when we update it
+    },
+    "scripts": {
+        "dev": "nodemon",
+        "start": "node index.js"
+    }
+}
