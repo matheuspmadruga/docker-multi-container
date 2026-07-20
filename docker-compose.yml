@@ -14,17 +14,17 @@ services:
       - client
     build:
       dockerfile: Dockerfile.dev
-      context: ../dockerizing_multiple_services/nginx
+      context: ./nginx
     ports:
       - "3050:80"
 
   api:
     build:
       dockerfile: Dockerfile.dev
-      context: ../dockerizing_multiple_services/server
+      context: ./server
     volumes:
       - /app/node_modules
-      - ../dockerizing_multiple_services/server:/app
+      - ./server:/app
     environment:
       REDIS_HOST: redis
       REDIS_PORT: 6379
@@ -37,10 +37,10 @@ services:
   worker:
     build:
       dockerfile: Dockerfile.dev
-      context: ../dockerizing_multiple_services/worker
+      context: ./worker
     volumes:
       - /app/node_modules
-      - ../dockerizing_multiple_services/worker:/app
+      - ./worker:/app
     environment:
       REDIS_HOST: redis
       REDIS_PORT: 6379
@@ -48,10 +48,10 @@ services:
   client:
     build:
       dockerfile: Dockerfile.dev
-      context: ../dockerizing_multiple_services/client
+      context: ./client_frontend/client
     stdin_open: true
     environment:
       - WDS_SOCKET_PORT=3050
     volumes:
       - /app/node_modules
-      - ../dockerizing_multiple_services/client:/app
+      - ./client_frontend/client:/app
