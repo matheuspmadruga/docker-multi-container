@@ -34,8 +34,10 @@ The application is designed to completely separate responsibilities, preventing 
 
 ```text
 multi_container/
-├── worker/
-│   ├── index.js          # Worker logic and Fibonacci calculation
-│   ├── keys.js           # Redis environment variable management
-│   └── package.json      # Worker dependencies (Nodemon, Redis Client)
-└── README.md             # Project documentation
+.
+├── client/            # Frontend Application (React)
+├── server/            # REST API Server (Express)
+├── worker/            # Background process (Fibonacci logic)
+├── nginx/             # Reverse Proxy configuration
+├── docker-compose.yml # Multi-container orchestration
+└── README.md          # Project documentation
