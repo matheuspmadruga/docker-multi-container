@@ -3,7 +3,7 @@ name: Deploy Multi-Container
 on:
   push:
     branches:
-      - mai
+      - main
 
 jobs:
   build:
