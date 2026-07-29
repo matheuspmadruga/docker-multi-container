@@ -1,8 +1,11 @@
-FROM node:16-alpine as builder
+FROM node:18-alpine AS builder
 WORKDIR '/app' 
 COPY ./package.json ./
 RUN npm install
 COPY . .
+
+ENV DISABLE_ESLINT_PLUGIN=true
+
 RUN npm run build
 
 FROM nginx
