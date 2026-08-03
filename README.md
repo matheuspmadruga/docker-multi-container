@@ -35,9 +35,11 @@ The application is designed to completely separate responsibilities, preventing 
 ```text
 multi_container/
 .
-├── client/            # Frontend Application (React)
-├── server/            # REST API Server (Express)
-├── worker/            # Background process (Fibonacci logic)
-├── nginx/             # Reverse Proxy configuration
-├── docker-compose.yml # Multi-container orchestration
-└── README.md          # Project documentation
+├── .github/               # GitHub Actions workflows (CI/CD)
+├── client_frontend/       # Frontend Application (React)
+├── server/                # REST API Server (Express)
+├── worker/                # Background process (Fibonacci logic)
+├── nginx/                 # Reverse Proxy configuration
+├── docker-compose.yml     # Multi-container production orchestration
+├── docker-compose-dev.yml # Multi-container development orchestration
+└── README.md              # Project documentation
